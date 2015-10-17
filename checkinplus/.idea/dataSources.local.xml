@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - checkinplus@mysql.checkinpl.us" uuid="f12e20b8-2a2c-44ab-92d1-7e5a6c1bd5ab">
+      <secret-storage>master_key</secret-storage>
+      <user-name>capstonegroup</user-name>
+      <schema-pattern>checkinplus.*</schema-pattern>
+      <default-schemas>checkinplus.*</default-schemas>
+    </data-source>
+  </component>
+</project>

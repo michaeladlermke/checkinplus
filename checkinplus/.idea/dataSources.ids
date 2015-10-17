@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - checkinplus@mysql.checkinpl.us" uuid="f12e20b8-2a2c-44ab-92d1-7e5a6c1bd5ab">
+    <database-info product="MySQL" version="5.1.56-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <schema name="" catalog="checkinplus"/>
+    <table name="checkins" schema="" catalog="checkinplus" type="TABLE">
+      <column name="checkin_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="checkin_user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="checkin_class_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="checkin_timestamp" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn" version="true"/>
+      <column name="checkin_active" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MQ=="/>
+      <primary-key name="PRIMARY" columns="checkin_id"/>
+    </table>
+    <table name="class_sections" schema="" catalog="checkinplus" type="TABLE">
+      <column name="class_section_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="class_section_name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="class_section_days" sqlType="VARCHAR" precision="10" scale="0" nullable="false" jdbcType="12" def="J1NNVFdURlMn"/>
+      <column name="class_section_start_time" sqlType="TIME" precision="8" scale="0" nullable="false" jdbcType="92"/>
+      <column name="class_section_end_time" sqlType="TIME" precision="8" scale="0" nullable="false" jdbcType="92"/>
+      <primary-key name="PRIMARY" columns="class_section_id"/>
+    </table>
+    <table name="classes" schema="" catalog="checkinplus" type="TABLE">
+      <column name="class_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="class_name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="class_instructor" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="class_section_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="SWRlbnRpZmllcyBhIHNlY3Rpb24gZnJvbSB0aGUgY2xhc3Nfc2VjdGlvbnMgdGFibGUgdGhhdCBkZWZpbmVzIHRoaXMgY2xhc3NlcyBkYXlzLCBzdGFydCB0aW1lIGFuZCBlbmQgdGltZS4="/>
+      <column name="class_semester_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" remarks="SWRlbnRpZmllcyB3aGljaCBzZW1lc3RlciB0aGlzIGNsYXNzIGlzIHNjaGVkdWxlZCBmb3IgZnJvbSB0aGUgc2VtZXN0ZXJzIHRhYmxlLg=="/>
+      <column name="class_location" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="class_active" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MQ=="/>
+      <primary-key name="PRIMARY" columns="class_id"/>
+    </table>
+    <table name="rosters" schema="" catalog="checkinplus" type="TABLE">
+      <column name="roster_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="roster_class_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="roster_user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="roster_instructor" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="roster_active" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MQ=="/>
+      <primary-key name="PRIMARY" columns="roster_id"/>
+    </table>
+    <table name="semesters" schema="" catalog="checkinplus" type="TABLE">
+      <column name="semester_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="semester_name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="semester_startdate" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="semester_enddate" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="semester_id"/>
+    </table>
+    <table name="user_roles" schema="" catalog="checkinplus" type="TABLE">
+      <column name="user_role_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_role_name" sqlType="VARCHAR" precision="25" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="user_role_id"/>
+    </table>
+    <table name="users" schema="" catalog="checkinplus" type="TABLE">
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_name" sqlType="VARCHAR" precision="250" scale="0" nullable="false" jdbcType="12"/>
+      <column name="user_password" sqlType="VARCHAR" precision="250" scale="0" nullable="false" jdbcType="12"/>
+      <column name="user_role" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="Mw=="/>
+      <column name="user_active" sqlType="TINYINT" precision="3" scale="0" nullable="false" jdbcType="-6" def="MQ=="/>
+      <primary-key name="PRIMARY" columns="user_id"/>
+    </table>
+  </data-source>
+</component>
